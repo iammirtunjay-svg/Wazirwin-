@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WazirWin VIP Offer</title>
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+      color:#fff;
+    }
+    .container{
+      max-width:420px;
+      margin:auto;
+      padding:20px;
+    }
+    .card{
+      background:#111;
+      border-radius:16px;
+      padding:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.5);
+      text-align:center;
+    }
+    .logo{
+      width:120px;
+      margin-bottom:15px;
+    }
+    }
+    h1{
+      font-size:24px;
+      margin-bottom:10px;
+      color:#00ffae;
+    }
+    .offer{
+      background:#1e1e1e;
+      border-radius:12px;
+      padding:15px;
+      margin:15px 0;
+      border:1px solid #00ffae33;
+    }
+    .offer span{
+      font-size:28px;
+      font-weight:bold;
+      color:#00ffae;
+    }
+    ul{
+      text-align:left;
+      padding-left:20px;
+      font-size:14px;
+    }
+    ul li{margin-bottom:6px;}.cta{
+  margin-top:20px;
+}
+.btn{
+  display:block;
+  width:100%;
+  padding:14px;
+  font-size:18px;
+  font-weight:bold;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  background:linear-gradient(90deg,#00ffae,#00c3ff);
+  color:#000;
+  animation:pulse 1.5s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(0,255,174,0.7);} 
+  70%{box-shadow:0 0 0 12px rgba(0,255,174,0);} 
+  100%{box-shadow:0 0 0 0 rgba(0,255,174,0);} 
+}
+.timer{
+  margin-top:15px;
+  font-size:16px;
+  color:#ffcc00;
+}
+.footer{
+  font-size:12px;
+  opacity:0.7;
+  margin-top:15px;
+}
+.live{
+  margin-top:12px;
+  font-size:14px;
+  color:#00ffae;
+}
+.trust{
+  margin-top:6px;
+  font-size:13px;
+  color:#ffcc00;
+}
+.sticky-wa{
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  background:#25D366;
+  color:#000;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:bold;
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+  cursor:pointer;
+  z-index:999;
+  animation:pulse 1.5s infinite;
+}
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <img src="https://i.ibb.co/99NdHVLd/logo.jpg" alt="WazirWin Logo" class="logo" />
+      <h1>🔥 WazirWin VIP Offer 🔥</h1>
+      <p>Sirf VIP ID par hi milega ye offer</p><div class="offer">
+    <p>Deposit kare</p>
+    <span>₹500</span>
+    <p>Aur paaye</p>
+    <span>₹500 Bonus</span>
+    <p>💯 100% Bonus</p>
+  </div>
+
+  <ul>
+    <li>✅ Offer sirf VIP ID ke liye</li>
+    <li>✅ VIP ID WhatsApp se milegi</li>
+    <li>✅ Limited time offer</li>
+    <li>✅ Trusted Gaming Platform</li>
+  </ul>
+
+  <div class="cta">
+    <button class="btn" onclick="forceWhatsApp()">👉 WhatsApp Par VIP ID Lo</button>
+  </div>
+
+  <div class="timer">
+    ⏳ Offer khatam hone me: <span id="countdown"></span>
+  </div>
+
+  <div class="footer">
+    18+ Only • Play Responsibly
+        <div class="live">
+    🔴 <span id="liveCount"></span> log abhi is offer ko dekh rahe hain
+  </div>
+
+  <div class="trust">
+    ⭐⭐⭐⭐⭐ 4.9/5 Rating | 10,000+ VIP Users
+  </div>
+</div>
+
+<div class="sticky-wa" onclick="redirectWA()">💬 WhatsApp</div>
+
+  </div>  <script>
+    // FORCE WhatsApp Redirect Logic
+    function forceWhatsApp(){
+      redirectWA();
+    }
+
+    function redirectWA(){
+      var phone = "917070607534";
+      var msg = "Jay Shree Balaji";
+      var url = "https://wa.me/"+phone+"?text="+encodeURIComponent(msg);
+      window.location.href = url;
+    }
+
+    // Auto Redirect after 7 seconds
+    setTimeout(function(){
+      redirectWA();
+    },7000);
+
+    // Exit Intent (Back / Close)
+    window.onbeforeunload = function(){
+      redirectWA();
+    };
+
+    // Countdown Timer (5 minutes)
+    var time = 5 * 60;
+    var timer = setInterval(function(){
+      var minutes = Math.floor(time / 60);
+      var seconds = time % 60;
+      document.getElementById("countdown").innerHTML = minutes + "m " + seconds + "s";
+      time--;
+      if(time < 0){
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "Redirecting to WhatsApp...";
+        redirectWA();
+      }
+    },1000);
+
+    // Live viewers counter
+    function randomLive(){
+      var n = Math.floor(Math.random()*20) + 15;
+      document.getElementById("liveCount").innerText = n;
+    }
+    setInterval(randomLive,3000);
+    randomLive();
+  </script></body>
+</html>
